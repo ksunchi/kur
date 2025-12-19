@@ -1,0 +1,518 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Навигация */
+.nav {
+  background: #d67a28;
+  color: #fff;
+  width: 100%;
+  padding: 22px 0;
+  font-weight: 600;
+  box-shadow: 0 2px 15px rgba(214, 122, 40, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.nav a.active {
+  background: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 80%;
+  height: 3px;
+  background: #000;
+  transform: translateX(-50%);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #000;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav a:hover::after {
+  width: 80%;
+}
+
+/* Основной контент */
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* Заголовок */
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #d67a28;
+  border-radius: 2px;
+}
+
+/* Описание страницы */
+.page-description {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #fdf6ec;
+  border-radius: 12px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-description p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Сетка писателей */
+.writers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.writer-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  display: flex;
+  padding: 25px;
+  gap: 20px;
+}
+
+.writer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Иконка с инициалами */
+.writer-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d67a28, #e88a38);
+  border-radius: 12px;
+  color: #000;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+/* Информация о писателе */
+.writer-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.writer-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.writer-dates {
+  font-size: 16px;
+  color: #d67a28;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.writer-bio {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.writer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
+
+.writer-country {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.writer-works {
+  font-size: 14px;
+  color: #d67a28;
+  font-weight: 500;
+}
+
+/* Детальная информация */
+.writer-details {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.details-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #d67a28;
+  margin-bottom: 10px;
+}
+
+.details-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.details-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.details-list li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.details-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #d67a28;
+}
+
+/* Футер */
+.footer {
+  background: #2c2c2c;
+  color: #fff;
+  width: 100%;
+  padding: 50px 0 30px;
+  margin-top: 60px;
+  font-size: 15px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Верхняя часть футера */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Логотип и описание */
+.footer-brand {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #d67a28;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* Информационные колонки */
+.footer-info {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.info-column {
+  min-width: 200px;
+}
+
+.column-title {
+  color: #d67a28;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(214, 122, 40, 0.3);
+}
+
+.column-list {
+  list-style: none;
+}
+
+.column-list li {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.column-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Контакты и адреса */
+.contact-item, .address-item {
+  margin-bottom: 12px;
+}
+
+.contact-item:last-child, .address-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Нижняя часть футера */
+.footer-bottom {
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .writers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .footer-top {
+    flex-direction: column;
+  }
+  
+  .footer-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-inner {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .page-title {
+    font-size: 32px;
+  }
+  
+  .nav a {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  
+  .writer-card {
+    padding: 20px;
+  }
+  
+  .writer-name {
+    font-size: 20px;
+  }
+  
+  .writer-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 22px;
+  }
+  
+  .footer-info {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .info-column {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .nav a {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+  
+  .writers-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .writer-card {
+    padding: 15px;
+  }
+  
+  .writer-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+  
+  .main-container {
+    padding: 30px 20px;
+  }
+  
+  .page-description {
+    padding: 15px;
+  }
+  
+  .page-description p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 24px;
+  }
+  
+  .writer-card {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .writer-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    align-self: center;
+  }
+  
+  .writer-name {
+    font-size: 18px;
+  }
+  
+  .writer-bio {
+    font-size: 15px;
+  }
+  
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .footer {
+    padding: 35px 0 20px;
+    font-size: 14px;
+  }
+  
+  .footer-logo {
+    font-size: 24px;
+  }
+  
+  .column-title {
+    font-size: 16px;
+  }
+  
+  .copyright {
+    font-size: 13px;
+  }
+  
+  .main-container {
+    padding: 20px 15px;
+  }
+}
