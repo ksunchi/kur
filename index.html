@@ -9,40 +9,6 @@
   <!-- Мета-теги для SEO -->
   <meta name="description" content="Платформа для изучения литературы, тестов и аналитических статей о писателях и их произведениях">
   <meta name="keywords" content="литература, писатели, книги, тесты, литературный гид">
-  <style>
-    /* Простые стили для уведомления */
-    .cookie-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #333;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      z-index: 1000;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
-    }
-    
-    .cookie-banner button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 8px 25px;
-      margin-left: 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    
-    .cookie-banner button:hover {
-      background: #45a049;
-    }
-    
-    .cookie-banner.hidden {
-      display: none;
-    }
-  </style>
 </head>
 <body>
   <!-- Навигация -->
@@ -153,24 +119,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- Простое уведомление о cookie -->
-  <div id="cookieBanner" class="cookie-banner">
-    <span>Этот сайт использует cookie для сбора статистики.</span>
-    <button onclick="acceptCookies()">Принять</button>
-  </div>
-
-  <script>
-    function acceptCookies() {
-      document.getElementById('cookieBanner').classList.add('hidden');
-      // Можно сохранить в localStorage, чтобы больше не показывать
-      localStorage.setItem('cookiesAccepted', 'true');
-    }
-    
-    // Проверяем, принимал ли пользователь cookie раньше
-    if (localStorage.getItem('cookiesAccepted') === 'true') {
-      document.getElementById('cookieBanner').classList.add('hidden');
-    }
-  </script>
 </body>
 </html>
