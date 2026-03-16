@@ -191,6 +191,7 @@ function updateProgress() {
 function checkAnswers() {
   const answeredCount = Object.keys(currentAnswers).length;
   const totalQuestions = testQuestions.length;
+  ym(106858210,'reachGoal','check_answers_click')
   
   // Проверяем, отвечены ли все вопросы
   if (answeredCount < totalQuestions) {
